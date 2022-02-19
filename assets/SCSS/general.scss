@@ -34,3 +34,113 @@ body {
     display: block;
     margin: 0 auto;
 }
+
+.categories {
+    margin-top: 40px;
+    margin-bottom: 120px;
+    width: 100%;
+    padding: 0 24px;
+    display: flex;
+    flex-direction: column;
+
+    .category {
+        background: $light-grey;
+        margin-bottom: 16px;
+        border-radius: 8px;
+        position: relative;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .image {
+            position: relative;
+
+            img {
+                display: block;
+                margin: 0 auto;
+                object-fit: contain;
+                z-index: 2;
+                position: relative;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                background: $near-white;
+                height: 50%;
+                width: 100%;
+                top: 0;
+                z-index: 0;
+            }
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: calc(100% - 52px);
+            background: $light-grey;
+            bottom: 0;
+            left: 0;
+            border-radius: 8px;
+            z-index: 0;
+        }
+
+        .text {
+            z-index: 1;
+            position: relative;
+            text-align: center;
+            font-weight: bold;
+            margin-top: auto;
+
+            h2 {
+                font-size: 15px;
+                letter-spacing: 1.07px;
+                text-transform: uppercase;
+                margin-bottom: 17px;
+            }
+
+            a {
+                padding-bottom: 22px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                @include subtitle;
+                color: rgba(0, 0, 0, 0.5);
+
+                &:hover {
+                    color: $orange;
+                }
+            }
+        }
+
+        @include tablet {
+            .category {
+                &:not(:last-child) {
+                    margin-right: 10px;
+                }
+            }
+        }
+
+        @include desktop {
+            &:not(:last-child) {
+                margin-right: 30px;
+            }
+        }
+
+    }
+
+
+    @include tablet {
+        margin-top: 96px;
+        margin-bottom: 96px;
+        flex-direction: row;
+        width: 100%;
+    }
+
+    @include desktop {
+        margin-top: 120px;
+        margin-bottom: 168px;
+    }
+}
