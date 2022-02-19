@@ -24,3 +24,12 @@ body {
     width: 100vw;
     min-width: $mobile;
 }
+
+.overline {
+    @include overline;
+}
+
+.container {
+    display: block;
+    margin: 0 auto;
+}
