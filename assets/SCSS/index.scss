@@ -87,18 +87,20 @@
 
 #announcements {
     display: grid;
-    grid-auto-rows: 320px;
+    grid-auto-rows: auto;
     grid-template-columns: 1fr;
     row-gap: 24px;
     padding: 0 24px;
-    margin-bottom: 200px;
+    margin-bottom: 120px;
 
     @include tablet {
         row-gap: 32px;
+        margin-bottom: 96px;
     }
 
     @include desktop {
         row-gap: 48px;
+        margin-bottom: 200px;
     }
 
     .announcement {
@@ -246,8 +248,9 @@
     }
 
     >div:not(.announcement) {
-        display: grid;
-        grid-auto-rows: auto;
+        grid-row: 4/6;
+        display: flex;
+        flex-direction: column;
 
         picture {
             width: 100%;
@@ -262,9 +265,10 @@
 
         .announcement {
             background: $light-grey;
-            padding: 41px 24px;
 
             .announcement-text {
+                padding: 41px 24px;
+
                 h1 {
                     font-size: 28px;
                     font-weight: bold;
@@ -285,7 +289,8 @@
         }
 
         @include tablet {
-            grid-template-columns: 1fr 1fr;
+            grid-row: 4/5;
+            flex-direction: row;
             column-gap: 11px;
 
             picture,
@@ -293,6 +298,7 @@
                 width: 100%;
                 height: 100%;
                 grid-row: 3/4;
+                flex: 1;
             }
 
             picture {
@@ -311,21 +317,26 @@
                 flex-direction: column;
                 justify-content: center;
                 grid-column: 2/3;
-                padding: 0 24px;
+                padding: 0;
+
+                .announcement-text {
+                    padding: 0 24px;
+                }
             }
         }
 
         @include desktop {
-
             picture {
                 margin: 0;
                 grid-column: 2/3;
             }
 
             .announcement {
-                margin-right: 11px;
                 grid-column: 1/2;
-                padding: 0 95px;
+
+                .announcement-text {
+                    padding: 0 95px;
+                }
             }
         }
     }
