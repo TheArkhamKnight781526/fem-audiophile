@@ -5,7 +5,7 @@
 <body>
     {{ partial "header.html" (dict "background" "transparent")  }}
 
-    <div id="hero">
+    <section id="hero">
         <div id="hero-inner" class="container">
             <div id="hero-text">
                 <span class="overline">New Product</span>
@@ -15,7 +15,43 @@
                 <a id="hero-call-to-action" href="product/xx-99-mark-ii-headphones">See Product</a>
             </div>
         </div>
-    </div>
+    </section>
+
+    <section id="categories" class="container">
+        <div class="category">
+            <div class="image">
+                <img src="assets/shared/desktop/image-category-thumbnail-headphones.png"
+                    alt="Thumbnail for Headphones Category" width="122.95px" height="160px">
+            </div>
+            <div class="text">
+                <h2>Headphones</h2>
+                <a href="/category/headphones"><span>Shop <img src="assets/shared/desktop/icon-arrow-right.svg" alt=""
+                            aria-hidden="true"></span></a>
+            </div>
+        </div>
+        <div class="category">
+            <div class="image">
+                <img src="assets/shared/desktop/image-category-thumbnail-speakers.png"
+                    alt="Thumbnail for Speakers Category" width="121.94px" height="146px">
+            </div>
+            <div class="text">
+                <h2>Speakers</h2>
+                <a href="/category/speakers"><span>Shop <img src="assets/shared/desktop/icon-arrow-right.svg" alt=""
+                            aria-hidden="true"></span></a>
+            </div>
+        </div>
+        <div class="category">
+            <div class="image">
+                <img src="assets/shared/desktop/image-category-thumbnail-earphones.png"
+                    alt="Thumbnail for Earphones Category" width="125px" height="126px">
+            </div>
+            <div class="text">
+                <h2>Earphones</h2>
+                <a href="category/earphones"><span>Shop <img src="assets/shared/desktop/icon-arrow-right.svg" alt=""
+                            aria-hidden="true"></span></a>
+            </div>
+        </div>
+    </section>
 </body>
 
 </html>
