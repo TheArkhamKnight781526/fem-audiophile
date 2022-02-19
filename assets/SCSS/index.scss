@@ -1,0 +1,87 @@
+@import '_variables';
+
+#hero {
+    background: #191919;
+    width: 100%;
+
+    #hero-inner {
+        width: 100%;
+        max-width: 1100px;
+        background: url('/assets/home/mobile/image-header.jpg');
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @include tablet {
+            background-image: url('/assets/home/tablet/image-header.jpg');
+        }
+
+        @include desktop {
+            justify-content: flex-start;
+            background-image: url('/assets/home/desktop/image-hero.jpg');
+        }
+
+        #hero-text {
+            text-align: center;
+            height: 600px;
+            padding: 0 24px;
+            padding-top: 216px;
+            padding-bottom: 167px;
+            width: 100%;
+            max-width: 328px;
+
+            @include tablet {
+                width: 50%;
+                max-width: 379px;
+                height: 729px;
+            }
+
+            @include desktop {
+                width: 40%;
+                max-width: unset;
+                text-align: left;
+            }
+
+            .overline {
+                color: white;
+                opacity: 0.5;
+                margin-bottom: 16px;
+                display: block;
+            }
+
+            #hero-title {
+                font-size: 36px;
+                line-height: 40px;
+                font-weight: bold;
+                color: white;
+                margin-bottom: 24px;
+            }
+
+            #hero-paragraph {
+                @include body;
+                color: white;
+                opacity: 0.75;
+                margin-bottom: 28px;
+            }
+
+            #hero-call-to-action {
+                padding: 15px 30px;
+                background: $orange;
+                color: white;
+                font-weight: bold;
+                font-size: 13px;
+                line-height: 18px;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                display: inline-block;
+
+                &:hover {
+                    background: $pale-orange;
+                }
+            }
+        }
+    }
+}

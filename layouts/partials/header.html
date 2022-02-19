@@ -1,4 +1,4 @@
-<header>
+<header {{ if (isset . "background") }} style="background: {{ .background }}" {{ end}}>
     <div id="inner-header">
         <img src="assets/shared/tablet/icon-hamburger.svg" alt="" id="hamburger" />
         <a href="/" id="logo"><img src="assets/shared/desktop/logo.svg" alt="" /></a>

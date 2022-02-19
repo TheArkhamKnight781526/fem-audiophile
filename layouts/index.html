@@ -1,8 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-{{ partial "head.html" . }}
+{{ partial "head.html" (dict "pageSCSS" "SCSS/index.scss") }}
+
 <body>
-    {{ partial "header.html" . }}
+    {{ partial "header.html" (dict "background" "transparent")  }}
+
+    <div id="hero">
+        <div id="hero-inner" class="container">
+            <div id="hero-text">
+                <span class="overline">New Product</span>
+                <h1 id="hero-title">XX99 MARK II Headphones</h1>
+                <p id="hero-paragraph">Experience natural, lifelike audio and exceptional build quality made for the
+                    passionate music enthusiast.</p>
+                <a id="hero-call-to-action" href="product/xx-99-mark-ii-headphones">See Product</a>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
