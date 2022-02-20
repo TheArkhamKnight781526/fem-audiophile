@@ -5,55 +5,61 @@
 <body>
     {{ partial "header.html" (dict "background" "transparent")  }}
 
-    <section id="hero">
-        <div id="hero-inner" class="container">
-            <div id="hero-text">
-                <span class="overline">New Product</span>
-                <h1 id="hero-title">XX99 MARK II Headphones</h1>
-                <p id="hero-paragraph">Experience natural, lifelike audio and exceptional build quality made for the
-                    passionate music enthusiast.</p>
-                <a id="hero-call-to-action" href="product/xx-99-mark-ii-headphones">See Product</a>
-            </div>
-        </div>
-    </section>
-
-    {{ partial "categories.html" . }}
-
-    <section id="announcements" class="container">
-        <div id="zx9" class="announcement">
-            <picture>
-                <source srcset="assets/home/desktop/image-speaker-zx9.png" media="(min-width: 1440px)" type="image/png">
-                <source srcset="assets/home/tablet/image-speaker-zx9.png" media="(min-width: 768px)" type="image/png">
-                <img src="assets/home/mobile/image-speaker-zx9.png" alt="ZX9 Speaker">
-            </picture>
-            <div class="announcement-text">
-                <h1>ZX9 Speaker</h1>
-                <p>Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.</p>
-                <a href="/product/zx-9-speaker" class="announcement-call-to-action">See Product</a>
-            </div>
-        </div>
-        <div id="zx7" class="announcement">
-            <div class="announcement-text">
-                <h1>ZX7 Speaker</h1>
-                <a href="/product/zx-7-speaker" class="announcement-call-to-action">See Product</a>
-            </div>
-        </div>
-        <div>
-            <picture>
-                <source srcset="/assets/home/desktop/image-earphones-yx1.jpg" media="(min-width: 1440px)">
-                <source srcset="/assets/home/tablet/image-earphones-yx1.jpg" media="(min-width: 768px)">
-                <img src="/assets/home/mobile/image-earphones-yx1.jpg" alt="YX1 Earphones">
-            </picture>
-            <div class="announcement">
-                <div class="announcement-text">
-                    <h1>YX1 Earphones</h1>
-                    <a href="/product/yx1-wireless-earphones" class="announcement-call-to-action">See Product</a>
+    <main>
+        <section id="hero">
+            <div id="hero-inner" class="container">
+                <div id="hero-text">
+                    <span class="overline">New Product</span>
+                    <h1 id="hero-title">XX99 MARK II Headphones</h1>
+                    <p id="hero-paragraph">Experience natural, lifelike audio and exceptional build quality made for the
+                        passionate music enthusiast.</p>
+                    <a id="hero-call-to-action" href="product/xx-99-mark-ii-headphones">See Product</a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    {{ partial "best-audio-gear.html" }}
+        {{ partial "categories.html" . }}
+
+        <section id="announcements" class="container">
+            <div id="zx9" class="announcement">
+                <picture>
+                    <source srcset="assets/home/desktop/image-speaker-zx9.png" media="(min-width: 1440px)"
+                        type="image/png">
+                    <source srcset="assets/home/tablet/image-speaker-zx9.png" media="(min-width: 768px)"
+                        type="image/png">
+                    <img src="assets/home/mobile/image-speaker-zx9.png" alt="ZX9 Speaker">
+                </picture>
+                <div class="announcement-text">
+                    <h1>ZX9 Speaker</h1>
+                    <p>Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.</p>
+                    <a href="/product/zx-9-speaker" class="announcement-call-to-action">See Product</a>
+                </div>
+            </div>
+            <div id="zx7" class="announcement">
+                <div class="announcement-text">
+                    <h1>ZX7 Speaker</h1>
+                    <a href="/product/zx-7-speaker" class="announcement-call-to-action">See Product</a>
+                </div>
+            </div>
+            <div>
+                <picture>
+                    <source srcset="/assets/home/desktop/image-earphones-yx1.jpg" media="(min-width: 1440px)">
+                    <source srcset="/assets/home/tablet/image-earphones-yx1.jpg" media="(min-width: 768px)">
+                    <img src="/assets/home/mobile/image-earphones-yx1.jpg" alt="YX1 Earphones">
+                </picture>
+                <div class="announcement">
+                    <div class="announcement-text">
+                        <h1>YX1 Earphones</h1>
+                        <a href="/product/yx1-wireless-earphones" class="announcement-call-to-action">See Product</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {{ partial "best-audio-gear.html" }}
+    </main>
+
+    {{ partial "footer.html" }}
 </body>
 
 </html>
