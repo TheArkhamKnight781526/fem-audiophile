@@ -7,11 +7,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
     {{ $general := resources.Get "SCSS/general.scss" | resources.ToCSS }}
     {{ $header := resources.Get "SCSS/header.scss" | resources.ToCSS }}
+    {{ $footer := resources.Get "SCSS/footer.scss" | resources.ToCSS }}
     {{ $pageStyles := resources.Get .pageSCSS | resources.ToCSS }}
     {{ $headerScript := resources.Get "TS/header.ts" | js.Build }}
 
     <link rel="stylesheet" href="{{ $general.Permalink }}">
     <link rel="stylesheet" href="{{ $header.Permalink }}">
+    <link rel="stylesheet" href="{{ $footer.Permalink }}">
     <link rel="stylesheet" href="{{ $pageStyles.Permalink }}">
 
     <script src="{{ $headerScript.Permalink }}" defer="true"></script>
