@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-{{ partial "head.html" (dict "pageSCSS" "SCSS/index.scss") }}
+{{ .Scratch.Set "pageSCSS" "SCSS/index.scss" }}
+{{ partial "head.html" . }}
 
 <body>
-    {{ partial "header.html" (dict "background" "transparent")  }}
+    {{ partial "header.html"  }}
 
     <main>
         <section id="hero">

@@ -8,14 +8,17 @@
     {{ $general := resources.Get "SCSS/general.scss" | resources.ToCSS }}
     {{ $header := resources.Get "SCSS/header.scss" | resources.ToCSS }}
     {{ $footer := resources.Get "SCSS/footer.scss" | resources.ToCSS }}
-    {{ $pageStyles := resources.Get .pageSCSS | resources.ToCSS }}
     {{ $headerScript := resources.Get "TS/header.ts" | js.Build }}
 
     <link rel="stylesheet" href="{{ $general.Permalink }}">
     <link rel="stylesheet" href="{{ $header.Permalink }}">
     <link rel="stylesheet" href="{{ $footer.Permalink }}">
+
+    {{ if ne ($.Scratch.Get "pageSCSS") nil }}
+    {{ $pageStyles := resources.Get ($.Scratch.Get "pageSCSS") | resources.ToCSS }}
     <link rel="stylesheet" href="{{ $pageStyles.Permalink }}">
+    {{ end }}
 
     <script src="{{ $headerScript.Permalink }}" defer="true"></script>
-    <title>{{ .Title }}</title>
+    <title>Audiophile - {{ .Title }}</title>
 </head>
