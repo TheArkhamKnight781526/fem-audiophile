@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+{{ .Scratch.Set "pageSCSS" "SCSS/category.scss" }}
+{{ partial "head.html" . }}
+
+<body>
+    {{ partial "header.html" . }}
+
+    <main>
+        <h1 id="category-name">{{ .Title }}</h1>
+
+        <section id="category-items" class="container">
+            {{ range where $.Site.Data.data "category" .Params.category }}
+                <div class="category-item">
+                    <picture>
+                        <source srcset="{{ .categoryImage.desktop }}" media="(min-width: 1440px)">
+                        <source srcset="{{ .categoryImage.tablet }}" media="(min-width: 768px)">
+                        <img src="{{ .categoryImage.mobile }}" alt="Image of the {{ .name }}" class="category-item-image">
+                    </picture>
+                    <div class="category-item-text">
+                        {{ if .new }} <span class="overline">New Product</span> {{ end }}
+                        <h1 class="category-item-name">{{ .name }}</h1>
+                        <p class="category-item-description">{{ .description }}</p>
+                        <a href="/product/{{ .slug }}" class="category-item-link">See More</a>
+                    </div>
+                </div>
+            {{ end }}
+        </section>
+
+        {{ partial "categories.html" . }}
+
+        {{ partial "best-audio-gear.html" . }}
+    </main>
+
+    {{ partial "footer.html" . }}
+</body>
+
+</html>

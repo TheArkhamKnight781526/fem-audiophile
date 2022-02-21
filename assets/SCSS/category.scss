@@ -1,0 +1,131 @@
+@import '_variables';
+
+#category-name {
+    background: black;
+    color: white;
+    font-size: 28px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 32px 0;
+    margin-bottom: 64px;
+
+    @include tablet {
+        margin-bottom: 120px;
+
+        @include heading-2;
+        padding-top: 105px;
+        padding-bottom: 97px;
+    }
+
+    @include desktop {
+        margin-bottom: 160px;
+    }
+}
+
+#category-items {
+    padding: 0 24px;
+
+    .category-item {
+        margin-bottom: 120px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        picture {
+            width: 100%;
+            margin-bottom: 32px;
+            display: block;
+
+            .category-item-image {
+                border-radius: 8px;
+                width: 100%;
+                object-fit: contain;
+            }
+
+            @include tablet {
+                margin-bottom: 52px;
+            }
+        }
+
+        .category-item-text {
+            text-align: center;
+
+            .overline {
+                display: block;
+                color: $orange;
+                margin-bottom: 24px;
+
+                @include tablet {
+                    margin-bottom: 16px;
+                }
+            }
+
+            .category-item-name {
+                font-size: 28px;
+                font-weight: bold;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                margin-bottom: 24px;
+
+                @include tablet {
+                    @include heading-2;
+                    margin-bottom: 32px;
+                }
+            }
+
+            .category-item-description {
+                @include body;
+                margin-bottom: 24px;
+                color: rgba(0, 0, 0, 0.5);
+            }
+
+            .category-item-link {
+                display: inline-block;
+                padding: 15px 30px;
+                background: $orange;
+                color: white;
+                text-transform: uppercase;
+                @include subtitle;
+
+                &:hover {
+                    background: $pale-orange;
+                }
+            }
+
+            @include tablet {
+                padding: 0 10%;
+            }
+        }
+
+        @include desktop {
+            margin-bottom: 160px;
+            flex-direction: row;
+
+            &:nth-child(even) {
+                flex-direction: row-reverse;
+
+                .category-item-text {
+                    margin-left: 0;
+                    margin-right: 120px;
+                }
+            }
+
+            picture {
+                width: 50%;
+                margin-bottom: 0;
+            }
+
+            .category-item-text {
+                padding: 0;
+                text-align: left;
+                width: 50%;
+                margin-left: 120px;
+
+                .category-item-description {
+                    margin-bottom: 40px;
+                }
+            }
+        }
+    }
+}
